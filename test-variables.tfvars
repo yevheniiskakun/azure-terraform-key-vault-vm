@@ -1,0 +1,5 @@
+env = "Dev"
+rg_name = "TerraformKeyVault"
+location = "northeurope"
+kv_name = "kv"
+kv_sku_name = "standard"
