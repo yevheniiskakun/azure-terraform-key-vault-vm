@@ -33,20 +33,20 @@ resource "azurerm_key_vault_secret" "kv-vm-secret" {
 }
 
 resource "azurerm_virtual_network" "vnet" {
-  name = "vnet"
+  name = "${var.env}-vnet"
   address_space = ["10.0.0.0/16"]
   location = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 }
 resource "azurerm_subnet" "sub" {
-  name = "internal"
+  name = "${var.env}-internal"
   address_prefixes = ["10.0.2.0/24"]
   virtual_network_name = azurerm_virtual_network.vnet.name
   resource_group_name = azurerm_resource_group.rg.name
 }
 
 resource "azurerm_network_interface" "nic" {
-  name = "example-nic"
+  name = "${var.env}-example-nic"
   location = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
