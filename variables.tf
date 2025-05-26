@@ -18,3 +18,11 @@ variable "kv_name" {
 variable "kv_sku_name" {
   type = string
 }
+
+variable "kv_vm_secret_name" {
+  type = string
+}
+
+variable "vm_name" {
+  type = string
+}
